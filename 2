@@ -1,0 +1,38 @@
+package exception1;
+import java.util.ArrayList;
+import java.util.List;
+
+public class exception1 {
+    public static void main(String[] args) {
+        int[] array1 = { 2, 10, 8, 6, 14 };
+        int[] array2 = { 1, 5, 4, 3, 7 };
+        except(array1, array2);
+
+    }
+
+    public static int except(int[] arr1, int[] arr2) {
+
+        for (int i = 0; i < arr1.length; i++) {
+
+            if (arr1.length != arr2.length) {
+                throw new RuntimeException("Array must have the same length");
+            } else
+                getnewmass(arr1, arr2);
+
+        }
+        return 0;
+
+    }
+
+    private static void getnewmass(int[] arr1, int[] arr2) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr1.length; i++) {
+            int arr3 = arr1[i] - arr2[i];
+            list.add(arr3);
+
+        }
+        System.out.println(list);
+
+    }
+
+}
